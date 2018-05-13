@@ -30,6 +30,7 @@ import pandas as pd
 from typing import Union, List, Tuple
 from matching_net.helpers import vectorize_data, split_data, get_vocabularies
 
+
 #############################################
 # Logging for Module
 #############################################
@@ -44,7 +45,9 @@ logger.setLevel(logging.INFO)
 
 
 class DataLoader(object):
-
+    """
+    Data handler for Matching Net
+    """
     def __init__(self,
                  data_df: pd.DataFrame,
                  split_pct: float=0.8,
@@ -244,7 +247,7 @@ class DataLoader(object):
                     example_in_set: bool=True,
                     for_testing: bool=False):
         """
-        Generate n-shot learning batch
+        Generate n-shot learning batch. See section 2.2 of paper
         :param generator: if True, yields each batch
         :param classes_per_batch: Number of classes to use as adversarial examples
         :param examples_per_class: Number of examples for each class per batch
