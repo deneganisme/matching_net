@@ -1,0 +1,5 @@
+torch
+torchvision
+numpy
+pandas
+keras  # TODO get rid of this req it is only used for pad_sequences
